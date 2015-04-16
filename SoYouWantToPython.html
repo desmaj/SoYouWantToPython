@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>So You Want To Python</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/impress-demo.css" />
+  </head>
+  <body>
+    
+    <div id="impress">
+      
+      <div class="step title" data-scale="4.0">
+	<h1>So You Want To Python</h1>
+      </div>
+      
+      <div class="step" data-x="0" data-y="300" data-z="100">
+	an introduction<br/>
+	by Matthew Desmarais<br/>
+	matthew.desmarais@gmail.com<br/>
+	2015-04-16
+      </div>
+      
+      <div class="step" data-x="0" data-y="4000" data-z="0">
+	<h1>Who am I?</h1>
+	<br/>
+	<div class="notes">
+	  I've been around software since Y2K.<br/>
+	  Started testing avionics software (jet engine controls, nav software)<br/>
+	  ~2003: Wanted to write a coverage tool; Python!<br/>
+	  ~2006: Came to UConn as a Web Developer w/ Student Affairs<br/>
+	  Several trips to CA later I'm at the VoTeR Lab.<br/>
+	</div>
+      </div>
+      
+      <div class="step" data-x="0" data-y="1500" data-z="-1000" data-rotate-x="90.0">
+	What is Python?<br/>
+	Where did it come from?<br/>
+      </div>
+      
+      <div class="step" data-x="-1500" data-y="500">
+	A programming language<br/>
+	created by Guido Van Rossum (Dutch)<br/>
+	in the late 1980s<br/>
+	as a successor to ABC<br/>
+	<div class="footnote">
+	  http://en.wikipedia.org/wiki/Python_(programming_language)
+	</div>
+      </div>
+      
+      <div class="step" data-x="-1500" data-y="2000" data-z="2000">
+	<pre>
+HOW TO RETURN words document:
+   PUT {} IN collection
+   FOR line IN document:
+      FOR word IN split line:
+         IF word not.in collection:
+            INSERT word IN collection
+   RETURN collection
+	</pre>
+	<div class="footnote">
+	  http://en.wikipedia.org/wiki/ABC_(programming_language)
+	</div>
+	<div class="notes">
+	  If you squint your eyes just right, this is very readable.<br/>
+	  PUT {} in collection // Store the empty set to collection<br/>
+	</div>
+      </div>
+      
+      <div class="step" data-x="-3000" data-y="500">
+	Open source!    
+      </div>
+      
+      <div class="step" data-x="1500" data-y="1000" data-z="-1000" data-rotate-x="90.0">
+	<h2>procedural</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+def fact(i):
+    if i >= 1:
+        return i * fact(i - 1)
+    else:
+        return 1
+	  </pre>
+	</div>
+	<div class="notes">
+	  Fairly typical recursive definition of factorial.<br/>
+	  Things to note:<br/>
+	  <ul>
+	    <li>No curly braces!</li>
+	    <li>No typing information!</li>
+	    <li>"def" introduces a function definition.</li>
+	    <li></li>
+	    <li></li>
+	    <li></li>
+	    <li></li>
+	  </ul>
+	</div>
+      </div>
+
+      <div class="step" data-x="3000" data-y="1000" data-z="-1000" data-rotate-x="90.0">
+	<h2>functional</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+def double_fact(i):
+    return map(lambda x: fact(x) * 2,
+               range(i))
+	  </pre>
+	</div>
+	
+      </div>
+
+      <div class="step" data-x="4500" data-y="1000" data-z="-1000" data-rotate-x="90.0">
+	<h2>object-oriented</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+class Aggregator(object):
+
+    def __init__(self):
+        self.sum = 0
+
+    def add(self, value):
+        self.sum += value
+	  </pre>
+	</div>
+	
+      </div>
+      
+      <div class="step" data-x="6000" data-y="1000" data-z="-1000" data-rotate-x="90.0">
+	<h2>dynamically-typed</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+forty_two = 42
+forty_two = "42"
+forty_two = [forty_two, 42]
+	  </pre>
+	</div>
+	
+      </div>
+      
+      <div class="step" data-x="4500" data-y="1000" data-z="-1000" data-rotate="180.0">
+	<h2>whitespace is significant</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+def fact(i):
+    if i:
+        return i * fact(i - 1)
+    else:
+        return 1
+	  </pre>
+	</div>
+      </div>
+      
+      <div class="step" data-x="6000" data-y="1000" data-z="-1000" data-rotate="180.0">
+	<h2>everything is a namespace</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+>>> dir()
+['__builtins__', '__doc__', ...]
+>>> forty_two = "42"
+>>> dir()
+['__builtins__', '__doc__', forty_two, ...]
+	  </pre>
+	</div>
+      </div>
+      
+      <div class="step" data-x="7200" data-y="1000" data-z="-1000" data-rotate-x="90.0">
+	<h2>remember this?</h2>
+	<h2>what happened here?</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+forty_two = 42
+forty_two = "42"
+forty_two = [forty_two, 42]
+	  </pre>
+	</div>
+	
+      </div>
+      
+      <div class="step" data-x="10000" data-y="1000" data-z="-1000" data-rotate-x="90.0">
+	<h2>iteration</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+chars = ["c", "h", "a", "r", "s"]
+for i, char in enumerate(chars):
+    print char * i
+=> ''
+... 'h'
+... 'aa'
+... 'rrr'
+... 'ssss'
+	  </pre>
+	</div>
+	
+      </div>
+      
+      <div class="step" data-x="10000" data-y="1000" data-z="0" data-rotate-x="90.0">
+	<h2>regular expressions?</h2>
+	<div class="note">
+Some people, when confronted with a problem, think 
+“I know, I'll use regular expressions.”   Now they have two problems.	  
+	</div>
+	
+      </div>
+      
+      <div class="step" data-x="10000" data-y="1000" data-z="1000" data-rotate-x="90.0">
+	<h2>how about 1.5 problems?</h2>
+	<br/>
+	<div>
+	  <pre style="font-family: courier">
+>>> match = re.search(r'chun{2:4}k',
+                      'super chunnnky')
+>>> match.start()
+6
+>>> match.end()
+13
+	  </pre>
+	</div>
+      
+    </div>
+	
+      <div class="step" data-x="12000" data-y="2000" data-z="1000" data-rotate-x="270.0">
+	<h2>But wait, there's more!</h2>
+	<br/>
+	<div>
+	  PyPI - the Python Package Index<br/>
+	  (The Cheeseshop)<br/>
+	  50844 Packages - free!
+	</div>
+	
+      </div>
+      
+    </div>
+    
+    <script type="text/javascript" src="js/impress.js"></script>
+    <script type="text/javascript" src="js/impressConsole.js"></script>
+    <script type="text/javascript">
+      window.addEventListener("load", function () {
+          impress().init();
+          impressConsole().init();
+      });
+    </script>
+  </body>
+</html>
